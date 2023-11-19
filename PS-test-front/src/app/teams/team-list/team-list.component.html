@@ -1,0 +1,45 @@
+<div class="toolbar">
+  <div class="search-container">
+    <mat-icon class="search-icon">search</mat-icon>
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search teams"
+      (input)="onSearchChange($event); search()"
+      [value]="searchInputValue()"
+    />
+
+    <button class="cancel-button" (click)="cancel()">Cancel</button>
+  </div>
+</div>
+
+<div class="teams-container">
+  <!-- Only display the team cards if 'teams' array has elements -->
+
+  <!-- Display team cards only if there are teams -->
+  <ng-container *ngIf="teams.length > 0">
+    <div *ngFor="let team of teams" (click)="navigateToTeam(team)">
+      <img [src]="team.thumbnail" alt="{{ team.name }}" class="team-image" />
+    </div>
+  </ng-container>
+
+  <!-- Display 'No teams found' message if 'teams' array is empty -->
+</div>
+<ng-container *ngIf="teams.length === 0 && isInit == false">
+  <div class="no-teams-message">
+    <img
+      src="assets/images/no-items.webp"
+      alt="No Teams Found"
+      class="no-teams-image"
+    />
+  </div>
+</ng-container>
+<ng-container *ngIf="isInit == true">
+  <div class="no-teams-message">
+    <img
+      src="assets/images/search.png"
+      alt="No Teams Found"
+      class="no-teams-image"
+    />
+  </div>
+</ng-container>

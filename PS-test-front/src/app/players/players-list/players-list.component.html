@@ -1,0 +1,43 @@
+<div class="team-container" *ngIf="team">
+  <div class="team-header">
+    <button mat-icon-button (click)="goBack()" id="backButton">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <img [src]="team.thumbnail" alt="Team Badge" class="team-badge" />
+    <h1>{{ team.name }}</h1>
+  </div>
+  <ul class="player-list" *ngIf="(team?.players)!.length > 0">
+    <li *ngFor="let player of team?.players">
+      <img
+        [src]="player.thumbnail"
+        alt="{{ player.name }}"
+        class="player-thumbnail"
+      />
+      <div class="player-info">
+        <h2>{{ player.name }}</h2>
+        <p>{{ player.position }}</p>
+        <p>{{ player.born | date : "mediumDate" }}</p>
+        <p>
+          Price:
+          {{
+            player.signin.amount
+              | currency
+                : (player.signin.currency | uppercase)
+                : "symbol-narrow"
+                : "1.0-0"
+          }}
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-container *ngIf="(team?.players)!.length == 0">
+  <div class="no-players-message">
+    <img
+      src="assets/images/no-player.png"
+      alt="No player Found"
+      class="no-players-image"
+    />
+  </div>
+</ng-container>

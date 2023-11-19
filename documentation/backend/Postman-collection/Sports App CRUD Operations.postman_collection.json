@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "e771e380-0598-44a3-9abb-53cb9b384222",
+		"name": "Sports App CRUD Operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9654185",
+		"_collection_link": "https://gold-star-7305-1.postman.co/workspace/GEP~ec337ddd-a41c-44c7-a764-a4b772d2b5f8/collection/9654185-e771e380-0598-44a3-9abb-53cb9b384222?action=share&source=collection_link&creator=9654185"
+	},
+	"item": [
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "Get all players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/players"
+					},
+					"response": []
+				},
+				{
+					"name": "Get player by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/players/5d2d9024da07b95bb8f1718e"
+					},
+					"response": []
+				},
+				{
+					"name": "Create player",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:3000/api/players"
+					},
+					"response": []
+				},
+				{
+					"name": "Update player",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:3000/api/players/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete player",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/players/{id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Get all teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/teams"
+					},
+					"response": []
+				},
+				{
+					"name": "Get team by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/teams/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:3000/api/teams"
+					},
+					"response": []
+				},
+				{
+					"name": "Update team",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:3000/api/teams/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete team",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/teams/{id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Leagues",
+			"item": [
+				{
+					"name": "Get all leagues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/leagues"
+					},
+					"response": []
+				},
+				{
+					"name": "Get league by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/leagues/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create league",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:3000/api/leagues"
+					},
+					"response": []
+				},
+				{
+					"name": "Update league",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:3000/api/leagues/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete league",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/leagues/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "get teams by league name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/leagues/searchTeamsByLeague?league=League",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"leagues",
+								"searchTeamsByLeague"
+							],
+							"query": [
+								{
+									"key": "league",
+									"value": "League"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "leagues Names",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

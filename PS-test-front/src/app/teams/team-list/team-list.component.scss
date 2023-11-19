@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 60px;
+}
+
+.toolbar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.search-icon {
+  color: #a2a2a2;
+  padding: 0 10px;
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+  background-color: transparent;
+}
+
+.autocomplete-suggestion {
+  position: absolute;
+  left: 0; /* Adjust based on input padding */
+  top: 0;
+  color: rgba(0, 0, 0, 0.4); /* Lighter color to differentiate suggestion */
+  pointer-events: none;
+}
+.cancel-button {
+  border: none;
+  background: none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  color: #007aff;
+}
+
+.cancel-button:hover {
+  opacity: 0.8;
+}
+
+.teams-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  padding: 15px;
+}
+
+.team-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+@media (min-width: 600px) {
+  .teams-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .teams-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.no-teams-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height for vertical centering */
+  width: 100%; /* Full width for horizontal centering */
+}
+
+.no-teams-image {
+  width: 300px; /* Set the width of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.teams-container {
+  position: relative;
+  bottom: -65px;
+}
